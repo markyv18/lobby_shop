@@ -16,4 +16,12 @@ RSpec.feature "visitor can view scumbags", type: :feature do
     expect(page).to have_content(scumbag_2.price)
     # expect(page).to have_css("img[src*=#{scumbag_2.image_path}")
   end
+
+  scenario "can see add to cart button" do
+    scumbag = create(:scumbag)
+
+    visit scumbags_path
+
+    expect(page).to have_button("Add to Cart")
+  end
 end
