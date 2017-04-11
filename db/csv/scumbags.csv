@@ -1,0 +1,10 @@
+name,price,description,image_path,party,branch
+Mitch McConnell,1500,,/mitch_mcconnell.png,Republican,Senate
+Harry Reid,1750,,/harry_reid.png,Democrat,Senate
+John McCain,2250,,/john_mccain.png,Republican,Senate
+Marco Rubio,500,,/marco_rubio.png,Republican,Senate
+Lindsey Graham,1500,,/lindsey_graham.png,Republican,Senate
+Tom Cotton,750,,/tom_cotton.png,Republican,Senate
+Cory Gardner,800,,/cory_gardner.png,Republican,Senate
+Rand Paul,1250,,/rand_paul.png,Republican,Senate
+Tim Kain,2500,,/tim_kain.png,Democrat,Senate
