@@ -1,3 +1,6 @@
 class Party < ActiveRecord::Base
-  has_many :officials
+  validates :name, uniqueness:true,
+                   presence: true
+
+  has_many :scumbags
 end
