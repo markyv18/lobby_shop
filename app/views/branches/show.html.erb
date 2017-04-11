@@ -1,0 +1,8 @@
+<h1><%= @branch.name %></h1>
+
+<% @branch.scumbags.each do |scumbag| %>
+  <div class="">
+    <h5><%= scumbag.name %> <%= scumbag.party_abbreviation %></h5>
+    <p>Price: $<%= scumbag.price %></p>
+  </div>
+<% end %>
