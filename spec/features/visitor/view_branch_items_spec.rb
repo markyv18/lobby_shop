@@ -7,7 +7,7 @@ RSpec.feature "visit '/:branch_name' and see all scumbags for the branch" do
     scumbag_1, scumbag_2 = create_list(:scumbag, 2, branch: senate)
     scumbag_3 = create(:scumbag, branch: supreme_court)
 
-    visit 'branches/senate'
+    visit '/senate'
 
     expect(page).to have_content(scumbag_1.name)
     expect(page).to have_content(scumbag_2.name)
