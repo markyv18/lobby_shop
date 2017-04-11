@@ -48,7 +48,6 @@ FactoryGirl.define do
 
   factory :branch do
     name { generate(:branch_name) }
-    slug { "#{name.downcase.gsub(" ", "-")}"}
   end
 
 end
