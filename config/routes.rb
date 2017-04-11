@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
-  resources :officials, only: [:index]
-
+  resources :scumbags, only: [:index]
+  resources :branches, only: [:show]
 end
