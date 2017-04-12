@@ -28,8 +28,14 @@
       </div>
 
       <div class="col-xs-3">
-          <%= cart_item.quantity %>
+        <%= form_for(:qty_update, url: cart_path(cart_item.scumbag.id), method: :put) do |f| %>
+          <%= f.label :quantity %>
+          <%= f.number_field :quantity, value: cart_item.quantity %>
+          <%= f.hidden_field :scumbag_id, value: cart_item.scumbag.id %>
+          <%= f.submit "Update" %>
+        <% end %>
       </div>
+
 
       <div class="col-xs-3">
           <%=button_to "Remove", cart_path(cart_item.scumbag.id), class:"btn-xs btn-danger", method: :delete%>
