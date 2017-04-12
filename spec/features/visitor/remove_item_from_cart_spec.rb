@@ -12,11 +12,14 @@ RSpec.feature "remove item from cart" do
     expect(page).to have_content(scumbag.name)
 
     click_on "Remove"
+
     expect(current_path).to eq('/cart')
-    expect(page).to have("Successfully removed the scumbag known as #{scumbag.name}!")
-    expect(page).to_not have_content(scumbag.name)
-    expect(page).to_not have_content(scumbag.price)
-    expect(page).to_not have_content(scumbag.branch.name)
+    expect(page).to have_content("Successfully removed the scumbag known as #{scumbag.name}!")
+    within(".scumbag-cart-item") do
+      expect(page).to_not have_content(scumbag.name)
+    end
+      expect(page).to_not have_content(scumbag.price)
+      expect(page).to_not have_content(scumbag.branch.name)
   end
 end
 
