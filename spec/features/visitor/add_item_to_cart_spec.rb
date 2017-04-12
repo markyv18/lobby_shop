@@ -16,12 +16,12 @@ RSpec.feature "visit '/scumbags' and add item to cart" do
 
     visit scumbags_path
     click_on "Add to Cart"
-    page.find(".fa-shopping-cart").click
+    click_on("cart")
 
     expect(current_path).to eq('/cart')
     expect(page).to have_content(scumbag.name)
     expect(page).to have_content(scumbag.price)
-    expect(page).to have_content(scumbag.branch)
+    expect(page).to have_content(scumbag.branch.name)
     # expect(page).to have_content('Quantity: 1')
     # test for css element image
     # total price

@@ -48,6 +48,7 @@ FactoryGirl.define do
 
   factory :branch do
     name { generate(:branch_name) }
+    slug { "#{name.parameterize}" }
   end
 
 end
