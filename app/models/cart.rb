@@ -13,6 +13,7 @@ class Cart
   end
 
   def items_total
+    return 0 if items.empty?
     items.map do |cart_item|
       cart_item.scumbag.price
     end.reduce(:+)
