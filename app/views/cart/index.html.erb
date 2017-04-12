@@ -1,0 +1,43 @@
+<div class="jumbotron">
+    <div class="container scumbag-cart-item">
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>Scumbag</h3>
+        </div>
+        <div class="col-xs-3">
+            <h3>Price</h3>
+        </div>
+
+        <div class="col-xs-3">
+            <h3>Quantity</h3>
+        </div>
+      </div>
+
+  <div class="line-separator"></div>
+  <% @cart_items.each do |cart_item| %>
+
+
+    <div class="row">
+      <div class="col-xs-3">
+        <%= "#{cart_item.scumbag.name} #{cart_item.scumbag.party_abbreviation}" %>
+        <%= image_path(cart_item.scumbag.image_path) %>
+      </div>
+
+      <div class="col-xs-3">
+          <%= "$#{cart_item.scumbag.price}" %>
+      </div>
+
+      <div class="col-xs-3">
+          <%= cart_item.quantity %>
+      </div>
+
+      <div class="col-xs-3">
+          <%=button_to "Remove", cart_path(cart_item.scumbag.id), class:"btn-xs btn-danger", method: :delete%>
+      </div>
+
+    </div>
+  <%end %>
+    <div class="line-separator"></div>
+    <h3>Total: $<%=@cart.items_total %> </h3>
+  </div>
+</div>

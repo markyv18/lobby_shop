@@ -6,6 +6,6 @@
   <div class="">
     <h5><%= scumbag.name %> <%= scumbag.party_abbreviation %></h5>
     <p>Price: $<%= scumbag.price %></p>
-    <%= button_to "Add to Cart", carts_path(scumbag_id: scumbag.id) %>
+    <%= button_to "Add to Cart", cart_index_path(scumbag_id: scumbag.id), class: "btn btn-primary" %>
   </div>
 <% end %>
