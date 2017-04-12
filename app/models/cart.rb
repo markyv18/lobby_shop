@@ -15,7 +15,7 @@ class Cart
   def items_total
     return 0 if items.empty?
     items.map do |cart_item|
-      cart_item.scumbag.price
+      cart_item.scumbag.price * cart_item.quantity.to_i
     end.reduce(:+)
   end
 
@@ -34,6 +34,10 @@ class Cart
 
   def count_of(scumbag_id)
     contents[scumbag_id.to_s]
+  end
+
+  def update_quantity(quantity, scumbag_id)
+    @contents[scumbag_id] = quantity.to_i
   end
 
 end
