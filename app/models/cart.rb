@@ -37,7 +37,7 @@ class Cart
   end
 
   def update_quantity(quantity, scumbag_id)
-    @contents[scumbag_id] = quantity
+    @contents[scumbag_id] = quantity.to_i
   end
 
 end

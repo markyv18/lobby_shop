@@ -7,4 +7,8 @@ class CartItem
     @quantity = quantity
   end
 
+  def subtotal
+    scumbag.price * quantity.to_i
+  end
+
 end

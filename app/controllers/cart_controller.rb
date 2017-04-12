@@ -14,6 +14,7 @@ class CartController < ApplicationController
   end
 
   def update
+    
     @cart.update_quantity(params[:qty_update][:quantity], params[:qty_update][:scumbag_id])
     session[:cart] = @cart.contents
     redirect_to cart_index_path
@@ -21,7 +22,9 @@ class CartController < ApplicationController
 
   def destroy
     @cart.delete_scumbag(params[:id])
+    scumbag = Scumbag.find(params[:id])
     session[:cart] = @cart.contents
+    flash[:success] = "Successfully removed the scumbag known as #{view_context.link_to scumbag.name, '#'}!"
     redirect_to cart_index_path
   end
 
