@@ -12,6 +12,12 @@ class Cart
     end
   end
 
+  def items_total
+    items.map do |cart_item|
+      cart_item.scumbag.price
+    end.reduce(:+)
+  end
+
   def total_count
     contents.values.sum
   end

@@ -1,3 +1,0 @@
-class CartItem
-
-end

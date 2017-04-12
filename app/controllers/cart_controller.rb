@@ -1,4 +1,7 @@
-class CartsController < ApplicationController
+class CartController < ApplicationController
+  def index
+    @cart_items = @cart.items
+  end
 
   def create
     scumbag = Scumbag.find(params[:scumbag_id])
