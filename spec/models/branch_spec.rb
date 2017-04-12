@@ -28,7 +28,6 @@ RSpec.describe Branch, :type => :model do
     end
 
     it "is invalid without a slug" do
-      pending
       branch = build(:branch, slug: nil)
 
       expect(branch).to be_invalid

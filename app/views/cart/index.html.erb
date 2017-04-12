@@ -19,7 +19,8 @@
 
     <div class="row">
       <div class="col-xs-3">
-        <%= "#{cart_item.scumbag.name} #{cart_item.scumbag.party_abbreviation}" %>
+        <%= "#{cart_item.scumbag.name} #{cart_item.scumbag.party_abbreviation}" %><br>
+        <%= "#{cart_item.scumbag.branch.name}"%>
         <%= image_path(cart_item.scumbag.image_path) %>
       </div>
 
