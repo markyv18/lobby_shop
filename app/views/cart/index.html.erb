@@ -32,7 +32,7 @@
       </div>
 
       <div class="col-xs-3">
-          <%=button_tag "Remove", class:"btn-xs btn-danger"%>
+          <%=button_to "Remove", cart_path(cart_item.scumbag.id), class:"btn-xs btn-danger", method: :delete%>
       </div>
 
     </div>

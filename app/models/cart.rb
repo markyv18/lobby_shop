@@ -18,6 +18,10 @@ class Cart
     end.reduce(:+)
   end
 
+  def delete_scumbag(id)
+    contents.delete(id)
+  end
+
   def total_count
     contents.values.sum
   end
