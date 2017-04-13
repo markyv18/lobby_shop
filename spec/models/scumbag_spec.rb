@@ -29,7 +29,7 @@ RSpec.describe Scumbag, :type => :model do
 
   describe "instance method" do
     let(:party)   { build(:party, name: "Democrat") }
-    let(:scumbag) { build(:scumbag, party: party ) }
+    let(:scumbag) { build(:scumbag, party: party) }
 
     context "responds to its methods" do
       it { expect(scumbag).to respond_to(:party_abbreviation)}
