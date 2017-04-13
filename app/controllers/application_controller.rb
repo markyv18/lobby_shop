@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user = User.find(session[:user_id]) || User.new(username: "Guest")
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+    else
+      @current_user = User.new(username: "Guest")
+    end
   end
 
 end

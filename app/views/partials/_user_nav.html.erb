@@ -4,9 +4,10 @@
       <a class="navbar-brand" href="#">Lobby Shoppe</a>
     </div>
 
-    <ul class="nav navbar-nav">
-        <div class="dropdown">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars"></i></a>
+    <ul class="nav navbar-nav pull-right">
+      <li class="welcome-msg">Welcome, <%=current_user.username%> </li>
+        <li><div class="dropdown hamburger">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars fa-2x"></i></a>
             <ul class="dropdown-menu">
               <li><a href="#">Home</a></li>
               <li><a href="#">Branches</a></li>
@@ -15,10 +16,11 @@
               <li><a href="#">Your Past Orders</a></li>
               <li><a href="#">Log Out</a></li>
              </ul>
-        </div>
-              <li><a href="/cart" id="cart"> <i class="fa fa-shopping-cart"></i> </a></li>
-              <li>Welcome, <%=current_user.username%> </li>
-              <li><%=button_to "Logout",class:"btn btn-primary", method: :delete%></li>
+          </div></li>
+
+              <li><a href="/cart" id="cart"> <span class="fa-stack fa-1x cart"><i class="fa fa-shopping-cart fa-stack-2x"></i><p class="fa-stack-1x cart-quantity"><%=@cart.total_count%></p></span></a></li>
+              <li><%=button_to "Logout", "#", method: :delete, class:"btn btn-primary"%></li>
+    </ul>
 
   </div>
 </nav>
