@@ -1,7 +1,5 @@
 require 'csv'
 
-DatabaseCleaner.strategy = :truncation
-DatabaseCleaner.clean
 
 party_names = ["Democrat", "Republican", "Independant"]
 

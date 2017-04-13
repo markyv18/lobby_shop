@@ -17,6 +17,58 @@
  */
 
 
+
+ #DCbody {
+    background-image: url("DC.jpg");
+    background-color: #cccccc;
+    background-size: 100%;
+}
+
+#SCbody {
+   background-image: url("US_Supreme_Court.jpg");
+   background-color: #cccccc;
+   background-size: 100%;
+}
+
+div#SENbody
+{
+   position: fixed;
+   top: 0px;
+   left: 0px;
+ }
+
+ div#SENbody img
+ {
+   width: 100%;
+   height: 100%;
+  }
+body,html
+{
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  width: 100%;
+  height: 100%;
+ }
+
+/*#SENbody {
+   background-image: url("US_Capitol.jpg");
+   background-color: #cccccc;
+   background-size: 100%;
+}*/
+
+#HOUSEbody {
+   background-image: url("US_Capitol.jpg");
+   background-color: #cccccc;
+   background-size: 100%;
+}
+
+#WHbody {
+   background-image: url("White_House.jpg");
+   background-color: #cccccc;
+   background-size: 100%;
+}
+
 .scumbag-cart-item {
   text-align: center;
 }
