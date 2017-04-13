@@ -1,5 +1,5 @@
 class Branch < ActiveRecord::Base
-  before_save :generate_slug
+  before_validation :generate_slug
 
   validates :name, uniqueness: true,
                    presence: true
