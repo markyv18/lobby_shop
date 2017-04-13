@@ -1,30 +1,20 @@
 RSpec.describe Party, :type => :model do
-  subject { described_class.new }
-
-  context 'attributes' do
-    it 'has a name' do
-      expect(subject).to respond_to(:name)
-    end
+  it "has a valid factory" do
+    expect(build(:party)).to be_valid
   end
 
-  context 'relationships' do
-    it 'has scumbags' do
-      expect(subject).to respond_to(:scumbags)
-    end
+  let(:party) { build(:party) }
+
+  describe "Attributes" do
+    it { expect(party).to respond_to(:name) }
   end
 
-  context 'validations' do
-    it 'is invalid without a name' do
-      party = build(:party, name: nil)
+  describe "ActiveModel validation" do
+    it { expect(party).to validate_presence_of(:name) }
+    it { expect(party).to validate_uniqueness_of(:name) }
+  end
 
-      expect(party).to be_invalid
-    end
-
-    it 'cannot have the name same as another' do
-      party_1 = create(:party)
-      party_2 = build(:party, name: party_1.name)
-
-      expect(party_2).to be_invalid
-    end
+  describe "ActiveRecord associations" do
+    it { expect(party).to have_many(:scumbags) }
   end
 end

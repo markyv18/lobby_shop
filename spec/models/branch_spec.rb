@@ -17,7 +17,7 @@ RSpec.describe Branch, :type => :model do
     it { expect(branch).to validate_presence_of(:slug) }
   end
 
-  describe "ActiveRecord Associations" do
+  describe "ActiveRecord associations" do
     it { expect(branch).to have_many(:scumbags) }
   end
 
