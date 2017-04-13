@@ -1,0 +1,49 @@
+
+
+
+.navbar-nav li a {
+    margin-top: 5px;
+    padding:0 5px;
+    line-height:30px;
+    color: #999999;
+}
+
+.cart-quantity {
+  color: mediumspringgreen !important;
+  font-size: 10px;
+  margin-left: 3px;
+}
+
+.cart {
+  margin-bottom: 20px !important;
+}
+
+#username {
+  margin-top: 4px;
+}
+
+
+
+.navbar-nav li {
+    color: #999999;
+    margin-top: 7px;
+    padding:0 5px;
+    line-height:30px;
+}
+
+.hamburger {
+  margin-top: 6px;
+  padding:0 5px;
+  line-height:30px;
+}
+
+
+.dropdown-toggle:active, .dropdown-toggle:hover, .open .dropdown-toggle {
+    background:#222222 !important;
+    color:white !important;
+}
+
+
+.welcome-msg {
+  margin-top: 13px !important;
+}
