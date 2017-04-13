@@ -17,57 +17,23 @@
  */
 
 
-
- #DCbody {
-    background-image: url("DC.jpg");
-    background-color: #cccccc;
-    background-size: 100%;
+#SENbody {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b2/United_States_Capitol_-_west_front.jpg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+#navybar {
+  opacity: 0.9;
+  background-color: black;
 }
 
-#SCbody {
-   background-image: url("US_Supreme_Court.jpg");
-   background-color: #cccccc;
-   background-size: 100%;
+#footer {
+  font-weight: 600;
+  color: white;
 }
 
-div#SENbody
-{
-   position: fixed;
-   top: 0px;
-   left: 0px;
- }
-
- div#SENbody img
- {
-   width: 100%;
-   height: 100%;
-  }
-body,html
-{
-  padding: 0px;
-  margin: 0px;
-  border: none;
-  width: 100%;
-  height: 100%;
- }
-
-/*#SENbody {
-   background-image: url("US_Capitol.jpg");
-   background-color: #cccccc;
-   background-size: 100%;
-}*/
-
-#HOUSEbody {
-   background-image: url("US_Capitol.jpg");
-   background-color: #cccccc;
-   background-size: 100%;
-}
-
-#WHbody {
-   background-image: url("White_House.jpg");
-   background-color: #cccccc;
-   background-size: 100%;
-}
 
 .scumbag-cart-item {
   text-align: center;
