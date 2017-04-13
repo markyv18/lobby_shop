@@ -7,5 +7,8 @@ Rails.application.routes.draw do
 
   root :to => "home#index"
   get '/dashboard', to: 'users#show'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   get '/:category_slug', to: "branches#show"
 end

@@ -14,7 +14,7 @@ class CartController < ApplicationController
   end
 
   def update
-    
+
     @cart.update_quantity(params[:qty_update][:quantity], params[:qty_update][:scumbag_id])
     session[:cart] = @cart.contents
     redirect_to cart_index_path
