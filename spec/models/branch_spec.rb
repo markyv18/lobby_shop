@@ -1,36 +1,62 @@
+require 'rails_helper'
+
 RSpec.describe Branch, :type => :model do
-  subject { described_class.new }
+  it 'has a valid factory' do
+    expect(build(:branch)).to be_valid
+  end
 
-  context 'attributes' do
-    it 'has a name' do
-      expect(subject).to respond_to(:name)
+  let(:branch) { build(:branch) }
+
+  describe "Attributes" do
+    it { expect(branch).to respond_to(:name) }
+  end
+
+  describe "ActiveModel validations" do
+    it { expect(branch).to validate_presence_of(:name) }
+    it { expect(branch).to validate_uniqueness_of(:name) }
+    it { expect(branch).to validate_presence_of(:slug) }
+  end
+
+  describe "ActiveRecord Associations" do
+    it { expect(branch).to have_many(:scumbags) }
+  end
+
+  context "Callbacks" do
+    let(:branch) { create(:branch) }
+
+    it { expect(branch).to callback(:generate_slug).before(:save) }
+  end
+
+  describe "instance methods" do
+    context "responds to its methods" do
+      it { expect(branch).to respond_to(:to_param) }
+      it { expect(branch).to respond_to(:generate_slug)}
+    end
+
+    context "executes methods correctly" do
+      context "#to_param" do
+        it "returns the slug" do
+          expect(branch.to_param).to eq("#{branch.name.parameterize}")
+        end
+      end
+
+      context "#generate_slug" do
+        it "parameterizes the name of the branch" do
+          expect(branch.generate_slug).to eq("#{branch.name.parameterize}")
+        end
+      end
     end
   end
 
-  context 'relationships' do
-    it "has scumbags" do
-      expect(subject).to respond_to(:scumbags)
-    end
-  end
+  describe "class methods", Branch do
+    let(:branch) { create(:branch) }
 
-  context 'validations' do
-    it "is invalid without a name" do
-      branch = build(:branch, name: nil, slug: "test")
-
-      expect(branch).to be_invalid
+    context "it responds to its methods" do
+      it { expect(Branch).to respond_to(:find) }
     end
 
-    it "cannot have the name same as another" do
-      branch_1 = create(:branch)
-      branch_2 = build(:branch, name: branch_1.name)
-
-      expect(branch_2).to be_invalid
-    end
-
-    it "is invalid without a slug" do
-      branch = build(:branch, slug: nil)
-
-      expect(branch).to be_invalid
+    context ".find" do
+      it { expect(Branch.find(branch.slug)).to eq(branch) }
     end
   end
 end

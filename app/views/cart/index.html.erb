@@ -38,7 +38,7 @@
         <%= form_for(:qty_update, url: cart_path(cart_item.scumbag.id), method: :put) do |f| %>
           <!-- <%#=  f.number_field :quantity, value: cart_item.quantity, min: 1 %> -->
           <%= f.hidden_field :scumbag_id, value: cart_item.scumbag.id %>
-          <%= f.select :quantity, (1..20), {:selected => cart_item.quantity}, {:onChange => 'this.form.submit();' }%>
+          <%= f.select :quantity, (1..20), {:selected => cart_item.quantity}, {:onChange => 'this.form.submit();' } %>
         <% end %>
       </div>
 

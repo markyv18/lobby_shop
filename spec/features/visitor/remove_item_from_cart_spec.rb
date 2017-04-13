@@ -18,8 +18,8 @@ RSpec.feature "remove item from cart" do
     within(".scumbag-cart-item") do
       expect(page).to_not have_content(scumbag.name)
     end
-      expect(page).to_not have_content(scumbag.price)
-      expect(page).to_not have_content(scumbag.branch.name)
+    expect(page).to_not have_content(scumbag.price)
+    expect(page).to_not have_content(scumbag.branch.name)
   end
 end
 
