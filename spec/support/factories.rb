@@ -56,4 +56,18 @@ FactoryGirl.define do
     initial_contents { ({"1"=>1}) }
     initialize_with { new(initial_contents) }
   end
+
+  sequence :username do |n|
+    "user_#{n}"
+  end
+
+  sequence :email do |n|
+    "user_#{n}@gmail.com"
+  end
+
+  factory :user do
+    username
+    email
+    password "hunter2"
+  end
 end
