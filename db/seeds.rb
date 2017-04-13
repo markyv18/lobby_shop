@@ -12,7 +12,7 @@ end
 branches = ["Senate", "Congress", "Supreme Court", "Executive"]
 
 branches.each do |name|
-  Branch.create!(name: name)
+  Branch.create(name: name)
 
   puts "Created #{name} branch"
 end
@@ -20,7 +20,7 @@ end
 scumbags ||= (CSV.open'db/csv/scumbags.csv', headers: true, header_converters: :symbol)
 
 scumbags.each do |scumbag|
-  Scumbag.create!(name:       scumbag[:name],
+  Scumbag.create(name:       scumbag[:name],
                   price:      scumbag[:price],
                   image_path: scumbag[:image_path],
                   party:      Party.find_by(name: scumbag[:party]),
