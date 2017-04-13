@@ -24,7 +24,7 @@ scumbags ||= (CSV.open'db/csv/scumbags.csv', headers: true, header_converters: :
 scumbags.each do |scumbag|
   Scumbag.create(name:       scumbag[:name],
                  price:      scumbag[:price],
-                 image_path: scumbag[:image_path],
+                 image_path: "http://i.imgur.com/oQaH0U9.jpg",
                  party:      Party.find_by(name: scumbag[:party]),
                  branch:     Branch.find_by(name: scumbag[:branch]))
 
