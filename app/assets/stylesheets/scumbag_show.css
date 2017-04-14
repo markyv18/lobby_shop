@@ -1,0 +1,30 @@
+#show-img {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.show-card {
+  border-style: solid;
+  border-width: 1px;
+  padding: 20px;
+  background-color: rgba(1, 1, 1, 0.4)
+}
+
+.left {
+  margin: 10px 10px 10px 40px;
+}
+
+.right {
+  margin: 200px 40px 10px 10px;
+  position: relative;
+  top: 50%;
+  
+}
+
+.show-button {
+  position: absolute;
+  right: 20px;
+  margin: 0px 0px 200px 0px;
+}

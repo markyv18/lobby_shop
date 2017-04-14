@@ -1,2 +1,19 @@
-<h1><%= @scumbag.name %> <%= @scumbag.party_abbreviation %></h1>
-<%= image_tag @scumbag.image_path %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card show-card left">
+      <div class="card-block">
+        <%= image_tag @scumbag.image_path, id: "show-img" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card show-card right">
+      <div class="card-block">
+        <h3 class="card-title"><%= @scumbag.name %> <%= @scumbag.party_abbreviation %><span><%= button_to "Add to Cart", cart_index_path(scumbag_id: @scumbag.id), class: "btn btn-success btn-md show-button" %></span></h3>
+        <p class="card-text"><%= @scumbag.branch.name %></p>
+        <b class="finalprice">$<%= @scumbag.price %></b>
+        <p class="card-text">An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. I know words. I have the best words. You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful.</p>
+      </div>
+    </div>
+  </div>
+</div>
