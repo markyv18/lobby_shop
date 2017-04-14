@@ -1,3 +1,7 @@
 <h1><%= @branch.name %></h1>
 
-<%= render "partials/scumbag_grid" %>
+<div class="container">
+  <div class="row">
+    <%= render partial: "partials/grid_scumbag", collection: @scumbags, as: :scumbag %>
+  </div>
+</div>
