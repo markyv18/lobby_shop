@@ -1,7 +1,8 @@
+# issue 7.2: visitor can create account
+
 require 'rails_helper'
 
 RSpec.feature "as a visitor, when visiting '/' and clicking create account" do
-
   scenario "when entering correct credentials and clicking create, they are redirected to '/dashboard'" do
     visit root_path
 
@@ -24,6 +25,5 @@ RSpec.feature "as a visitor, when visiting '/' and clicking create account" do
 
     expect(page).to have_button("Logout")
     expect(page).to_not have_button("Login")
-
   end
 end

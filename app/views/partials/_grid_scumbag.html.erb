@@ -1,0 +1,15 @@
+<div class="col-xs-18 col-sm-4 col-md-3">
+	<div class="productbox">
+		<div class="imgthumb img-responsive">
+      <%= image_tag scumbag.image_path, id:"#{scumbag.id}_scumbag", class:"index-img" %>
+        <div class="middle">
+          <div class="detail-button"><%= button_to "View", "#", class: "btn btn-success btn-md btn-block" %></div>
+        </div>
+		</div>
+		<div class="caption">
+			<h5><%= scumbag.name %> <%= scumbag.party_abbreviation %><span class="pull-right"><%= scumbag.branch.name %></span></h5>
+      <b class="finalprice">$<%= scumbag.price %></b>
+      <p><%= button_to "Add to Cart", cart_index_path(scumbag_id: scumbag.id), class: "btn btn-success btn-md btn-block" %></p>
+    </div>
+	</div>
+</div>

@@ -12,9 +12,16 @@ RSpec.describe Branch, :type => :model do
   end
 
   describe "ActiveModel validations" do
+    before do
+      Branch.skip_callback(:validation, :before, :generate_slug)
+    end
+    after do
+      Branch.set_callback(:validation, :before, :generate_slug)
+    end
+    let(:branch) { build(:branch) }
     it { expect(branch).to validate_presence_of(:name) }
-    # it { expect(branch).to validate_uniqueness_of(:name) }
-    # it { expect(branch).to validate_presence_of(:slug) }
+    it { expect(branch).to validate_uniqueness_of(:name) }
+    it { expect(branch).to validate_presence_of(:slug) }
   end
 
   describe "ActiveRecord associations" do

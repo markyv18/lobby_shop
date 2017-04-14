@@ -19,7 +19,7 @@
           </div></li>
 
               <li><a href="/cart" id="cart"> <span class="fa-stack fa-1x cart"><i class="fa fa-shopping-cart fa-stack-2x"></i><p class="fa-stack-1x cart-quantity"><%=@cart.total_count%></p></span></a></li>
-              <li><%=button_to "Logout", "#", method: :delete, class:"btn btn-primary"%></li>
+              <li><%=button_to "Logout", logout_path, method: :delete, class:"btn btn-primary"%></li>
     </ul>
 
   </div>
