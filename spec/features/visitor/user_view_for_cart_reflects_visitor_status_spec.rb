@@ -1,3 +1,5 @@
+# issue 8: items in cart added as a user are present after logging in
+
 require "rails_helper"
 
 RSpec.feature "As a visitor has items in their cart and visits '/cart'" do

@@ -1,3 +1,5 @@
+# issue 2: Visitor can view items
+
 require 'rails_helper'
 
 RSpec.feature "visitor can view scumbags", type: :feature do
