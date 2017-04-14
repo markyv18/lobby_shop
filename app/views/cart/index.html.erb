@@ -24,7 +24,6 @@
   <div class="line-separator"></div>
   <% @cart_items.each do |cart_item| %>
 
-
     <div class="row">
 
       <div class="col-xs-2" id="cart-img">
@@ -32,7 +31,7 @@
       </div>
 
       <div class="col-xs-2">
-        <%= "#{cart_item.scumbag.name} #{cart_item.scumbag.party_abbreviation}" %><br>
+        <%= link_to cart_item.scumbag.name, scumbag_path(cart_item.scumbag) %> <%= "#{cart_item.scumbag.party_abbreviation}" %><br>
         <%= "#{cart_item.scumbag.branch.name}"%>
       </div>
 
