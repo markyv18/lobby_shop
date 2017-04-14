@@ -1,3 +1,5 @@
+# issue 5: visitor can remove item from cart
+
 require 'rails_helper'
 
 RSpec.feature "remove item from cart" do

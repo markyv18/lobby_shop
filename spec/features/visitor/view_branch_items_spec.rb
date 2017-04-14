@@ -1,3 +1,5 @@
+# issue 3: visitor can view items by category
+
 require "rails_helper"
 
 RSpec.feature "visit '/:branch_name' and see all scumbags for the branch" do

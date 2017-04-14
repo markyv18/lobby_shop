@@ -1,3 +1,5 @@
+# issue 4: visitor can add item to cart
+
 require 'rails_helper'
 
 RSpec.feature "visit '/scumbags' and add item to cart" do
