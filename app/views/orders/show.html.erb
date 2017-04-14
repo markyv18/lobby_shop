@@ -1,0 +1,12 @@
+<h1>Your order on <%=@order.format_created_date%>. </h1>
+
+
+<div class="scumbag-order-list">
+<%@order.scumbag_orders.each do |scumbag_order| %>
+  Name: <%=scumbag_order.scumbag_name %>
+  Quantity: <%=scumbag_order.scumbag_quantity%>
+  Subtotal: <%=scumbag_order.subtotal%>
+  Status: <%=@order.status.capitalize%>
+  Total: <%=@order.total%>
+<%end%>
+</div>

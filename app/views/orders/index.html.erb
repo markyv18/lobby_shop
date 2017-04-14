@@ -1,0 +1,6 @@
+<h1>Your Orders</h1>
+
+<%@orders.each do |order| %>
+  <%=order.price%> <%=link_to "View", order_path(order) %>
+  
+<%end%>
