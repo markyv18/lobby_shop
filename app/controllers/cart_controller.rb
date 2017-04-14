@@ -24,7 +24,7 @@ class CartController < ApplicationController
     @cart.delete_scumbag(params[:id])
     scumbag = Scumbag.find(params[:id])
     session[:cart] = @cart.contents
-    flash[:success] = "Successfully removed the scumbag known as #{view_context.link_to scumbag.name, '#'}!"
+    flash[:success] = "Successfully removed the scumbag known as #{view_context.link_to scumbag.name, scumbag_path(scumbag) }!"
     redirect_to cart_index_path
   end
 

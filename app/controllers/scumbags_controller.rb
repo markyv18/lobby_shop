@@ -4,4 +4,8 @@ class ScumbagsController < ApplicationController
     @scumbags = Scumbag.all
   end
   
+  def show
+    @scumbag = Scumbag.find(params[:id])
+  end
+
 end

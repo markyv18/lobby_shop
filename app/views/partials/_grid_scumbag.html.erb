@@ -3,7 +3,7 @@
 		<div class="imgthumb img-responsive">
       <%= image_tag scumbag.image_path, id:"#{scumbag.id}_scumbag", class:"index-img" %>
         <div class="middle">
-          <div class="detail-button"><%= button_to "View", "#", class: "btn btn-success btn-md btn-block" %></div>
+          <div class="detail-button"><%= button_to "View", scumbag_path(scumbag), method: :get, class: "btn btn-success btn-md btn-block" %></div>
         </div>
 		</div>
 		<div class="caption">
