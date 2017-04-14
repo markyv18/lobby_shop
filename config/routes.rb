@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cart, only: [:create, :index, :update, :destroy]
 
   resources :users, only: [:create, :new, :show]
+  resources :orders, only: [:index, :show]
 
   root :to => "home#index"
   get '/dashboard', to: 'users#show'

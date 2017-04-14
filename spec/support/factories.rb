@@ -69,5 +69,33 @@ FactoryGirl.define do
     username
     email
     password "hunter2"
+
+    factory :user_with_orders, class: User do
+
+      transient do
+        orders_count 5
+      end
+      after(:create) do |user, evaluator|
+        create_list(:order, evaluator.orders_count, user: user)
+      end
+    end
+  end
+
+
+
+  factory :order do
+    price
+    status 0
+    user
+
+    factory :order_with_scumbags, class: Order do
+
+      transient do
+        scumbags_count 1
+      end
+      after(:create) do |order, evaluator|
+        create_list(:scumbag, evaluator.scumbags_count, orders: [order])
+      end
+    end
   end
 end
