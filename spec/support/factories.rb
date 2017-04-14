@@ -87,6 +87,15 @@ FactoryGirl.define do
     price
     status 0
     user
-  end
 
+    factory :order_with_scumbags, class: Order do
+
+      transient do
+        scumbags_count 1
+      end
+      after(:create) do |order, evaluator|
+        create_list(:scumbag, evaluator.scumbags_count, orders: [order])
+      end
+    end
+  end
 end

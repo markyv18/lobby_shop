@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20170413224208) do
   create_table "scumbag_orders", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "scumbag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "scumbag_quantity"
+    t.integer  "scumbag_price"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["order_id"], name: "index_scumbag_orders_on_order_id", using: :btree
     t.index ["scumbag_id"], name: "index_scumbag_orders_on_scumbag_id", using: :btree
   end
