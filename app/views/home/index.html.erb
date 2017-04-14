@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lobby Shoppe</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<div class="top-fuckers">
+  <h2>The sleaziest of the sleazy for 2016*</h2>
+  <ol>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Amount of filth collected</th>
+      </tr>
+      <tr>
+        <td>Clinton, Hillary (D)</td>
+        <td>N/A</td>
+        <td>$2,084,162</td>
+      </tr>
+      <tr>
+        <td>Van Hollen, Chris (D-MD)</td>
+        <td>House</td>
+        <td>$540,041</td>
+      </tr>
+      <tr>
+        <td>Rubio, Marco (R-FL)</td>
+        <td>Senate</td>
+        <td>$495,718</td>
+      </tr>
+      <tr>
+        <td>Bush, Jeb (R)</td>
+        <td>N/A</td>
+        <td>$432,110</td>
+      </tr>
+      <tr>
+        <td>Schumer, Charles E (D-NY)</td>
+        <td>Senate</td>
+        <td>$425,472</td>
+      </tr>
+      <tr>
+        <td>Ryan, Paul (R-WI)</td>
+        <td>House</td>
+        <td>$407,532</td>
+      </tr>
+      <tr>
+        <td>Bennet, Michael F (D-CO)</td>
+        <td>Senate</td>
+        <td>$398,966</td>
+      </tr>
+      <tr>
+        <td>Blunt, Roy (R-MO)</td>
+        <td>Senate</td>
+        <td>$365,120</td>
+      </tr>
+
+
+    </table>
+
+  </ol>
+  <p><a href='https://www.opensecrets.org/industries/recips.php?ind=K02++'>* source</a></p>
+</div>
+
+<br>
+<br>
+
+<div class="container scumbag-cart-item">
+  <div class="row">
+    <div class="col-xs-6">
+      <h3><a href='/scumbags'>Find Individual Scumbags</a></h3>
+    </div>
+    <div class="col-xs-6">
+      <h3><a href='/branches'>Sort by Branch of Government</a></h3>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -15,3 +15,104 @@
  *= require bootstrap.min
  *= require font-awesome
  */
+
+.top-fuckers {
+      margin: auto;
+      width: 60%;
+      border: 3px solid red;
+      padding: 10px;
+}
+
+.sell-outs {
+  font-weight: 800;
+  color: red;
+}
+
+.sleeze {
+  text-indent: 50px;
+
+}
+
+ #SENbody {
+   background-size: 110%;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+ }
+ .navbar navbar-inverse {
+   opacity: 0.9;
+   background-color: black;
+ }
+
+ #footer {
+   font-weight: 800;
+   color: white;
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:40px;
+   background:black;
+ }
+
+ .wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards li {
+  border: 2px solid red;
+  border-radius:5px;
+  background-color: red;
+  color: #fff;
+  flex: 1 1 200px;
+}
+
+.cards h4 {
+  background-color: blue;
+  margin: 0;
+  padding: 10px;
+}
+
+.cards p {
+  padding: 10px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.flex li {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px 1fr));
+  grid-gap: 20px;
+}

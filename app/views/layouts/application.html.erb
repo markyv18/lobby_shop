@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="SENbody">
     <% if logged_in? %>
       <%= render "partials/user_nav" %>
     <% else %>
@@ -20,5 +20,6 @@
 
     <%= yield %>
   </body>
+  <div id="footer"> Made with corruption, greed, and pestilence by Nick, Riley, and Mark. </div>
 
 </html>

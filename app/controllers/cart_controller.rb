@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+
   def index
     @cart_items = @cart.items
   end
