@@ -5,6 +5,9 @@
           <h3>Scumbag</h3>
         </div>
         <div class="col-xs-2">
+          <h3>Scumbag</h3>
+        </div>
+        <div class="col-xs-2">
             <h3>Price</h3>
         </div>
 
@@ -24,10 +27,13 @@
 
     <div class="row">
 
+      <div class="col-xs-2" id="cart-img">
+        <%= image_tag(cart_item.scumbag.image_path, size: "75", class: "cart-thumb") %>
+      </div>
+
       <div class="col-xs-2">
         <%= "#{cart_item.scumbag.name} #{cart_item.scumbag.party_abbreviation}" %><br>
         <%= "#{cart_item.scumbag.branch.name}"%>
-        <%= image_path(cart_item.scumbag.image_path) %>
       </div>
 
       <div class="col-xs-2">
