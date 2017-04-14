@@ -5,6 +5,10 @@ class BranchesController < ApplicationController
     @scumbags = @branch.scumbags
   end
 
+  def index
+    @branches = Branch.all
+  end
+
   private
 
 end
