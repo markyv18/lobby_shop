@@ -15,6 +15,14 @@ class Order < ApplicationRecord
       """
   end
 
+  def add_items_to_order(cart)
+    cart.contents.each do |scumbag_id, quantity|
+      scumbag = Scumbag.find(scumbag_id.to_i)
+      self.scumbag_orders.create(scumbag_id: scumbag.id,
+                                   scumbag_quantity: quantity,
+                                   scumbag_price: scumbag.price)
+    end
+  end
 
   # def total #use cart total at time of creating order instead
   #   scumbag_orders.map do |scumbag_order|
