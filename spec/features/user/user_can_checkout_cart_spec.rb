@@ -12,9 +12,10 @@ RSpec.feature "Checkout Cart" do
 
     expect(current_path).to eq('/orders')
     expect(page).to have_content("Orders for #{user.username}")
-    within_table('Orders') do
-      expect(page).to have_content(scumbag.name)
+    within('.orders') do
+      expect(page).to have_content('ordered')
       expect(page).to have_content(scumbag.price * 3)
+      expect(page).to have_content(user.orders.first.created_at)
     end
   end
 end
