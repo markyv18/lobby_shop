@@ -110,6 +110,14 @@ FactoryGirl.define do
   end
 
 
+  factory :admin_user, class: User do
+    username
+    email
+    password "hunter2"
+    role 1
+  end
+
+
   factory :order do
     total_price
     status 0
