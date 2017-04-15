@@ -1,7 +1,7 @@
 
 <h1>Orders for <%= current_user.username %></h1>
 
-<div class="jumbotron">
+<div class="jumbotron orders">
     <div class="container scumbag-orders">
       <div class="row">
         <div class="col-xs-2">
@@ -28,15 +28,15 @@
 
     <div class="row">
 
-      <div class="col-xs-2" id="cart-img">
-      <%= order.id %>
+      <div class="col-xs-2 order-id">
+        <%= order.id %>
       </div>
 
-      <div class="col-xs-2">
-        <%= order.created_at %>%
+      <div class="col-xs-2 order-date">
+        <%= order.created_at %>
       </div>
 
-      <div class="col-xs-2 total_price">
+      <div class="col-xs-2 order-price">
           <%= order.total_price %>
       </div>
 

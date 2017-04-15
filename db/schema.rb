@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20170415200000) do
     t.string   "name"
     t.integer  "price"
     t.string   "image_path"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "party_id"
     t.integer  "branch_id"
-    t.integer  "status",     default: 0
+    t.integer  "status"
     t.index ["branch_id"], name: "index_scumbags_on_branch_id", using: :btree
     t.index ["party_id"], name: "index_scumbags_on_party_id", using: :btree
   end
