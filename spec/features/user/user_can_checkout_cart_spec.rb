@@ -18,4 +18,18 @@ RSpec.feature "Checkout Cart" do
       expect(page).to have_content(user.orders.first.created_at)
     end
   end
+
+  scenario "user tried to checkout with an empty cart" do
+    user = create(:user)
+    scumbag = create(:scumbag)
+    page.set_rack_session(user_id: user.id, cart: {})
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit cart_index_path
+    click_on "Checkout"
+
+    expect(page).to have_content("Must Have Items in Cart")
+    expect(current_path).to eq(cart_index_path)
+    expect(user.orders.count).to eq(0)
+  end
 end
