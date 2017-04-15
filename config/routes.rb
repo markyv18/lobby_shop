@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :new, :show]
   resources :orders, only: [:index, :show, :create]
 
+  namespace :admin do
+   resources :scumbags, only: [:create, :destroy, :new, :index]
+   resources :orders, only: [:index]
+  end
+
   root :to => "home#index"
   get '/dashboard', to: 'users#show'
   get '/login', to: 'sessions#new'

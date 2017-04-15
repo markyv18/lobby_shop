@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
+    redirect_to login_path if guest?
     @orders = current_user.orders
   end
 
