@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :scumbags, only: [:create, :destroy, :new, :index]
    resources :orders, only: [:index]
+   get '/dashboard', to: 'base#show'
   end
 
   root :to => "home#index"
