@@ -10,6 +10,7 @@ Rails.application.routes.draw do
    resources :scumbags, only: [:create, :destroy, :new, :index]
    resources :orders, only: [:index]
    get '/dashboard', to: 'base#show'
+   resources :users, only: [:update, :edit]
   end
 
   root :to => "home#index"

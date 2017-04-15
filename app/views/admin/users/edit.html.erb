@@ -1,0 +1,8 @@
+
+<%= form_for current_user, url: admin_user_path do |f| %>
+  <%= f.text_field :username, placeholder: current_user.username %>
+  <%= f.text_field :email, placeholder: current_user.email %>
+  <%= f.password_field :password, placeholder: "New Password"%>
+  <%= f.password_field :password_confirmation, placeholder: "Confirm New Password" %>
+  <%= f.submit "Update Account", class: "btn", method: :patch %>
+<%end%>
