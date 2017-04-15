@@ -13,12 +13,20 @@ class ApplicationController < ActionController::Base
     session[:user_id]
   end
 
+  def guest?
+    current_user.username == "Guest"
+  end
+
   def current_user
     if session[:user_id]
       @current_user = User.find(session[:user_id])
     else
       @current_user = User.new(username: "Guest")
     end
+  end
+
+  def current_admin?
+    current_user.admin?
   end
 
   def retired?(scumbag)
