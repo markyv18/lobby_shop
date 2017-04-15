@@ -11,8 +11,11 @@ class OrdersController < ApplicationController
   def create
     @order = Order.create(total_price: @cart.items_total, user_id: current_user.id)
     add_items_to_order
+    reset_cart
     redirect_to orders_path
   end
+
+#-----Where should we put these methods?
 
   def add_items_to_order
     @cart.contents.each do |scumbag_id, quantity|
@@ -21,5 +24,9 @@ class OrdersController < ApplicationController
                                    scumbag_quantity: quantity,
                                    scumbag_price: scumbag.price)
     end
+  end
+
+  def reset_cart
+    session[:cart] = {}
   end
 end
