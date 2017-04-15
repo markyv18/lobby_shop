@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  validates :total_price, presence: true
   belongs_to :user
   has_many :scumbag_orders
   has_many :scumbags, through: :scumbag_orders
@@ -14,10 +15,11 @@ class Order < ApplicationRecord
       """
   end
 
-  def total
-    scumbag_orders.map do |scumbag_order|
-      scumbag_order.subtotal
-    end.reduce(:+)
-  end
+
+  # def total #use cart total at time of creating order instead
+  #   scumbag_orders.map do |scumbag_order|
+  #     scumbag_order.subtotal
+  #   end.reduce(:+)
+  # end
 
 end

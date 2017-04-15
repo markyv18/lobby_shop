@@ -17,6 +17,10 @@ FactoryGirl.define do
     n * 1234
   end
 
+  sequence :total_price do |n|
+    n * 2839
+  end
+
   factory :scumbag do
     name { generate(:scumbag_name) }
     price
@@ -65,6 +69,13 @@ FactoryGirl.define do
     "user_#{n}@gmail.com"
   end
 
+  factory :scumbag_order do
+    order
+    scumbag
+    scumbag_quantity 3
+    scumbag_price 400
+  end
+
   factory :user do
     username
     email
@@ -82,20 +93,19 @@ FactoryGirl.define do
   end
 
 
-
   factory :order do
-    price
+    total_price
     status 0
     user
 
-    factory :order_with_scumbags, class: Order do
-
-      transient do
-        scumbags_count 1
-      end
-      after(:create) do |order, evaluator|
-        create_list(:scumbag, evaluator.scumbags_count, orders: [order])
-      end
-    end
+    # factory :order_with_scumbags, class: Order do
+    #
+    #   transient do
+    #     scumbags_count 1
+    #   end
+    #   after(:create) do |order, evaluator|
+    #     create_list(:scumbag, evaluator.scumbags_count, orders: [order])
+    #   end
+    # end
   end
 end
