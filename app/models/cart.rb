@@ -39,4 +39,5 @@ class Cart
   def update_quantity(cart_params)
     @contents[cart_params[:scumbag_id]] = cart_params[:quantity].to_i
   end
+
 end

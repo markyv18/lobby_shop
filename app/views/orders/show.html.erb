@@ -1,11 +1,34 @@
-<h1>Your order on <%=@order.format_created_date%>. </h1>
+<div class="order-header">
+  <h1>Order #<%= @order.id %> on <%=@order.format_created_date%>. </h1>
+  <h3 class="order-status">Status: <%= @order.status.capitalize %></h3>
+</div>
 
+<div class="container all-stations">
 
-<div class="scumbag-order-list">
-<%@order.scumbag_orders.each do |scumbag_order| %>
-  Name: <%=scumbag_order.scumbag_name %>
-  Quantity: <%=scumbag_order.scumbag_quantity%>
-  Subtotal: <%=scumbag_order.subtotal%>
-  Status: <%=@order.status.capitalize%>
-<%end%>
+  <div class="panel">
+    <div class="panel-heading order-panel"><b>Order Items</b></div>
+    <table class="table table-striped table-hover table-condensed">
+      <tr>
+        <th><div id="station-name-header">Politician</div></th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+      </tr>
+
+      <% @order.scumbag_orders.each do |scumbag_order| %>
+        <tr>
+          <td><div class="station-name"><%= link_to "#{scumbag_order.scumbag.name} #{scumbag_order.scumbag.party_abbreviation}", scumbag_path(scumbag_order.scumbag) %></div></td>
+          <td>$<%= scumbag_order.scumbag_price %></td>
+          <td><%= scumbag_order.scumbag_quantity %></td>
+          <td>$<%= scumbag_order.subtotal %></td>
+        </tr>
+      <% end%>
+        <tr>
+          <td><div class="total">Total:</div></td>
+          <td></td>
+          <td></td>
+          <td>$<%= @order.total_price %>
+        </tr>
+    </table>
+  </div>
 </div>

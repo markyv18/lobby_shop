@@ -2,7 +2,6 @@
     <div class="container scumbag-cart-item">
       <div class="row">
         <div class="col-xs-2">
-          <h3>Scumbag</h3>
         </div>
         <div class="col-xs-2">
           <h3>Scumbag</h3>
@@ -18,7 +17,6 @@
         <div class="col-xs-2">
             <h3>Sub Total</h3>
         </div>
-
       </div>
 
   <div class="line-separator"></div>
@@ -60,7 +58,7 @@
     <div class="line-separator"></div>
     <h3>Total: $<%=@cart.items_total %> </h3>
     <% if logged_in? %>
-      <%= button_to "Checkout", '',class: "checkout-btn btn btn-primary"%>
+      <%= button_to "Checkout", orders_path,class: "checkout-btn btn btn-primary"%>
     <% else %>
       <p class="login-or-create"><%="#{link_to "Login", login_path} or #{link_to "Create Account to Checkout", new_user_path}".html_safe %></p>
     <%end%>
