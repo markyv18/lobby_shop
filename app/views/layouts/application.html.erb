@@ -15,9 +15,9 @@
       <%= render "partials/visitor_nav" %>
     <%end%>
     <% flash.each do |type, message| %>
-      <%= content_tag :div, message.html_safe, class: "flash-#{type}"%>
-    <% end %>
-
+      <% message = [message] if message.class == String %>
+        <%= content_tag :div, message.join('<br/>').html_safe, class: "flash-#{type}"%>
+    <%end%>
     <%= yield %>
   </body>
 

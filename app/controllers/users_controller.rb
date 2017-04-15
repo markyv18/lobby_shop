@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash[:success] = "Logged in as #{@user.username}"
       redirect_to dashboard_path(user_id: @user.id)
     else
-      flash.now[:failure] = "Account creation unsuccessful."
+      flash.now[:failure] = @user.errors.full_messages
       render :new
     end
   end

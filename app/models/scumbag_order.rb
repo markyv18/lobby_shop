@@ -1,4 +1,7 @@
 class ScumbagOrder < ApplicationRecord
+  validates :scumbag_quantity, presence: true
+  validates :scumbag_price, presence: true
+
   belongs_to :order
   belongs_to :scumbag
 
