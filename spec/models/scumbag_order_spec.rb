@@ -30,7 +30,7 @@ RSpec.describe ScumbagOrder do
       it { expect(scumbag_order).to respond_to(:scumbag_name)}
     end
 
-    context "it executes it's methods properly" do
+    context "it executes its methods properly" do
       it { expect(scumbag_order.subtotal).to eq(1200) }
     end
   end

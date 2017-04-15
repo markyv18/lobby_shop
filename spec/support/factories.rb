@@ -7,7 +7,10 @@ FactoryGirl.define do
                    'Claire McCaskill',
                    'Harry Reid',
                    'Marco Rubio',
-                   'Mitch McConnell']
+                   'Mitch McConnell',
+                   'Test_Scumbag_1',
+                   'Test_Scumbag_2',
+                   'Test_Scumbag_3']
 
   sequence :scumbag_name, scumbag_names.cycle do |n|
     "#{n}"
@@ -21,6 +24,7 @@ FactoryGirl.define do
     n * 2839
   end
 
+
   factory :scumbag do
     name { generate(:scumbag_name) }
     price
@@ -29,9 +33,22 @@ FactoryGirl.define do
     image_path 'senators/tim_kaine.png'
   end
 
+  factory :retired_scumbag, class: Scumbag do
+    name { generate(:scumbag_name) }
+    price
+    party
+    branch
+    image_path 'senators/tim_kaine.png'
+    status 1
+  end
+
   party_names = ['Democrat',
                  'Republican',
-                 'Independant']
+                 'Independant',
+                 'Test',
+                 'Test_2',
+                 'Test_3',
+                 'Test_4']
 
   sequence :party_name, party_names.cycle do |n|
     "#{n}"

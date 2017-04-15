@@ -9,7 +9,11 @@
 		<div class="caption">
 			<h5><%= scumbag.name %> <%= scumbag.party_abbreviation %><span class="pull-right"><%= scumbag.branch.name %></span></h5>
       <b class="finalprice">$<%= scumbag.price %></b>
-      <p><%= button_to "Add to Cart", cart_index_path(scumbag_id: scumbag.id), class: "btn btn-success btn-md btn-block" %></p>
+      <% if scumbag.retired? %>
+        <p><%= button_to "Scumbag Retired", cart_index_path(scumbag_id: scumbag.id), class: "btn btn-success btn-md btn-block retired-btn", disabled: true %></p>
+      <%else%>
+        <p><%= button_to "Add to Cart", cart_index_path(scumbag_id: scumbag.id), class: "btn btn-success btn-md btn-block" %></p>
+      <%end%>
     </div>
 	</div>
 </div>
