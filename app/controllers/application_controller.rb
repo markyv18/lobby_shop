@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   helper_method :current_user
   helper_method :logged_in?
-  helper_method :flash_message
-  helper_method :render_flash
   protect_from_forgery with: :exception
 
   def set_cart
@@ -21,5 +19,9 @@ class ApplicationController < ActionController::Base
     else
       @current_user = User.new(username: "Guest")
     end
+  end
+
+  def retired?(scumbag)
+    scumbag.status == 1
   end
 end

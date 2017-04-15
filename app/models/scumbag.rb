@@ -9,6 +9,8 @@ class Scumbag < ActiveRecord::Base
   has_many :scumbag_orders
   has_many :orders, through: :scumbag_orders
 
+  enum status: %w(active retired)
+
   def party_abbreviation
     "(#{party.name[0].upcase})"
   end
