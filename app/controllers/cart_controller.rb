@@ -10,7 +10,7 @@ class CartController < ApplicationController
     session[:cart] = @cart.contents
 
     flash[:notice] = "Added #{scumbag.name} to cart."
-    redirect_to scumbags_path
+    redirect_to request.referrer
   end
 
   def update
