@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(password)
       session[:user_id] = user.id
-      redirect_to root_path
+      check_login_redirect(user)
     else
       flash.now[:failure] = "Login unsuccessful."
       render :new
@@ -22,6 +22,10 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def check_login_redirect(user)
+    user.admin? ? redirect_to(admin_dashboard_path) : redirect_to(root_path)
+  end
 
   def username
     params[:session][:username]
