@@ -38,7 +38,7 @@
       </div>
 
       <div class="col-xs-2">
-        <%= form_for(:qty_update, url: cart_path(cart_item.scumbag.id), method: :put) do |f| %>
+        <%= form_for(:qty_update, url: cart_path(cart_item.scumbag.id), method: :put, id: "qty") do |f| %>
           <%= f.hidden_field :scumbag_id, value: cart_item.scumbag.id %>
           <%= f.select :quantity, (1..20), {:selected => cart_item.quantity}, {:onChange => 'this.form.submit();' } %>
         <% end %>
