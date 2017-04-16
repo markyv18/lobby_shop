@@ -17,17 +17,17 @@
 
       <% @order.scumbag_orders.each do |scumbag_order| %>
         <tr>
-          <td><div class="station-name"><%= link_to "#{scumbag_order.scumbag.name} #{scumbag_order.scumbag.party_abbreviation}", scumbag_path(scumbag_order.scumbag) %></div></td>
-          <td>$<%= scumbag_order.scumbag_price %></td>
-          <td><%= scumbag_order.scumbag_quantity %></td>
-          <td>$<%= scumbag_order.subtotal %></td>
+          <td class="order-scumbag-name"><div class="station-name"><%= link_to "#{scumbag_order.scumbag.name} #{scumbag_order.scumbag.party_abbreviation}", scumbag_path(scumbag_order.scumbag) %></div></td>
+          <td class="order-scumbag-price">$<%= scumbag_order.scumbag_price %></td>
+          <td class="order-scumbag-quantity"><%= scumbag_order.scumbag_quantity %></td>
+          <td class="order-scumbag-subtotal">$<%= scumbag_order.subtotal %></td>
         </tr>
       <% end%>
         <tr>
           <td><div class="total">Total:</div></td>
           <td></td>
           <td></td>
-          <td>$<%= @order.total_price %>
+          <td class="order-scumbag-total">$<%= @order.total_price %>
         </tr>
     </table>
   </div>
