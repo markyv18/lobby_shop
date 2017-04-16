@@ -7,6 +7,7 @@ class Admin::BaseController < ApplicationController
     else
       @orders = Order.all
     end
+    @orders_count = Order.all.count
     @statuses = Order.statuses
   end
 
