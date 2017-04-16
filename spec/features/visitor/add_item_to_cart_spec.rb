@@ -8,7 +8,7 @@ RSpec.feature "visit '/scumbags' and add item to cart" do
 
     visit scumbags_path
     click_on "Add to Cart"
-    save_and_open_page
+    
     within('.flash-notice') { expect(page).to have_content("Added #{scumbag.name} to cart.") }
   end
 
