@@ -1,3 +1,92 @@
-<h1>Admin Dashboard</h1>
 
-<%= button_to "Modify Your Account", edit_admin_user_path(current_user), method: :get, class: "btn btn-success btn-md"%>
+
+  <div class="container scumbag-cart-item">
+    <h1>Admin Dashboard</h1>
+    <div class="jumbotron orders">
+      <%= button_to "Modify Your Account", edit_admin_user_path(current_user), method: :get, class: "btn btn-success btn-md"%>
+
+      <div class="table-width">
+        <div class="row">
+          <div class="col-xs-3">
+            <p>Ordered</p>
+          </div>
+          <div class="col-xs-3">
+            <p>Paid</p>
+          </div>
+          <div class="col-xs-3">
+              <p>Cancelled</p>
+          </div>
+
+          <div class="col-xs-3">
+              <p>Completed</p>
+          </div>
+        </div>
+
+        <div class="status-table">
+          <div class="row">
+            <div class="col-xs-3">
+              <p><%= @statuses["ordered"] ?  @statuses["ordered"] : 0%></p>
+            </div>
+            <div class="col-xs-3">
+              <p><%= @statuses["paid"] ?  @statuses["paid"] : 0%></p>
+            </div>
+            <div class="col-xs-3">
+              <p><%= @statuses["cancelled"] ?  @statuses["cancelled"] : 0%></p>
+            </div>
+
+            <div class="col-xs-3">
+                <%= @statuses["completed"] ?  @statuses["completed"] : 0%>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row table-margin">
+        <div class="col-xs-2">
+          <h3>Order Number</h3>
+        </div>
+        <div class="col-xs-2">
+          <h3>Date</h3>
+        </div>
+        <div class="col-xs-2">
+            <h3>Total Price</h3>
+        </div>
+
+        <div class="col-xs-2">
+            <h3>Status</h3>
+        </div>
+
+        <div class="col-xs-2">
+          <h3>View</h3>
+        </div>
+      </div>
+
+  <div class="line-separator"></div>
+  <% @orders.each do |order| %>
+
+    <div class="row table-margin">
+
+      <div class="col-xs-2 order-id">
+        <%= order.id %>
+      </div>
+
+      <div class="col-xs-2 order-date">
+        <%= order.created_at %>
+      </div>
+
+      <div class="col-xs-2 order-price">
+          <%= order.total_price %>
+      </div>
+
+      <div class="col-xs-2">
+        <%= order.status %>
+      </div>
+
+      <div class="col-xs-2">
+          <%= link_to "View", order_path(order) %>
+      </div>
+
+    </div>
+  <%end %>
+</div>

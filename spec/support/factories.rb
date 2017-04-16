@@ -12,6 +12,7 @@ FactoryGirl.define do
                    'Test_Scumbag_2',
                    'Test_Scumbag_3']
 
+
   sequence :scumbag_name, scumbag_names.cycle do |n|
     "#{n}"
   end
@@ -117,20 +118,15 @@ FactoryGirl.define do
     role 1
   end
 
+  order_statuses = (0..3).to_a
+
+  sequence :status, order_statuses.cycle do |n|
+    n
+  end
 
   factory :order do
     total_price
-    status 0
+    status
     user
-
-    # factory :order_with_scumbags, class: Order do
-    #
-    #   transient do
-    #     scumbags_count 1
-    #   end
-    #   after(:create) do |order, evaluator|
-    #     create_list(:scumbag, evaluator.scumbags_count, orders: [order])
-    #   end
-    # end
   end
 end
