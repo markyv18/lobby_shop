@@ -1,3 +1,4 @@
+
 class Order < ApplicationRecord
   validates :total_price, presence: true
   belongs_to :user
@@ -22,6 +23,10 @@ class Order < ApplicationRecord
                                    scumbag_quantity: quantity,
                                    scumbag_price: scumbag.price)
     end
+  end
+
+  def self.statuses
+    group(:status).count
   end
 
   # def total #use cart total at time of creating order instead
