@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
    resources :scumbags, only: [:create, :destroy, :new, :index]
-   resources :orders, only: [:index]
+   resources :orders, only: [:index, :update]
    get '/dashboard', to: 'base#show'
    resources :users, only: [:update, :edit]
   end

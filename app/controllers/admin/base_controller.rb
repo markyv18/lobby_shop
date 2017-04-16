@@ -2,7 +2,11 @@ class Admin::BaseController < ApplicationController
   before_action :require_admin
 
   def show
-    @orders = Order.all
+    if params[:status]
+      @orders = Order.where(status: params[:status])
+    else
+      @orders = Order.all
+    end
     @statuses = Order.statuses
   end
 
