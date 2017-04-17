@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LobbyShop</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <%= render "partials/user_nav" %>
+    <% else %>
+      <%= render "partials/visitor_nav" %>
+    <%end%>
+    <% flash.each do |type, message| %>
+      <% message = [message] if message.class == String %>
+        <%= content_tag :div, message.join('<br/>').html_safe, class: "flash-#{type}"%>
+    <%end%>
+    <%= yield %>
+  </body>
+
+</html>
