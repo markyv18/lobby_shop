@@ -14,7 +14,7 @@ RSpec.feature "as an authenticated user with one order" do
 
       page.set_rack_session(user_id: user_1.id)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
-      
+
       visit orders_path
 
       page.all(:css, ".order-id") do
