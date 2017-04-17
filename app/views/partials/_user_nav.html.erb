@@ -9,12 +9,12 @@
         <li><div class="dropdown hamburger">
           <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-bars fa-2x"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Branches</a></li>
-              <li><a href="/scumbags">All Scumbags (except bernie)</a></li>
-              <li><a href="/cart">Cart</a></li>
-              <li><a href="#">Your Past Orders</a></li>
-              <li><a href="#">Log Out</a></li>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Shop by Branch", branches_path %></li>
+              <li><%= link_to "All Politicians", scumbags_path%></li>
+              <li><%= link_to "Your Cart", cart_index_path %></li>
+              <li><%= link_to "Order History", orders_path %></li>
+              <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
              </ul>
           </div></li>
 
