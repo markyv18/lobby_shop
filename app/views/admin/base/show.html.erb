@@ -93,10 +93,10 @@
       </div>
 
       <div class="col-xs-2 order-update">
-        <% if order.status == 'ordered' %>
+        <% if order.ordered? %>
           <%= button_to "Mark as Paid", admin_order_path(order, status: 'paid'), method: :patch %><br/>
           <%= button_to "Cancel", admin_order_path(order, status: 'cancelled'), method: :patch %>
-        <% elsif order.status == 'paid'%>
+        <% elsif order.paid? %>
           <%= button_to "Cancel", admin_order_path(order, status: 'cancelled'), method: :patch %>
           <%= button_to "Mark as Completed", admin_order_path(order, status: 'completed'), method: :patch %>
         <% end %>
@@ -105,4 +105,3 @@
     </div>
   <%end %>
 </div>
-
