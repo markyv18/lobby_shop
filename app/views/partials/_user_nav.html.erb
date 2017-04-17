@@ -5,7 +5,7 @@
     </div>
 
     <ul class="nav navbar-nav pull-right">
-      <li class="welcome-msg">Welcome, <%=current_user.username%> </li>
+      <li class="welcome-msg">Welcome, <%= current_user.username %></li>
       <%= render "partials/nav_dropdown"%>
       <li><a href="/cart" id="cart"> <span class="fa-stack fa-1x cart"><i class="fa fa-shopping-cart fa-stack-2x"></i><p class="fa-stack-1x cart-quantity"><%=@cart.total_count%></p></span></a></li>
       <li><%=button_to "Logout", logout_path, method: :delete, class:"btn btn-primary"%></li>
