@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'sqlite3'
   gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
 
