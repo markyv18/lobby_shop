@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :scumbags, only: [:index, :show]
   resources :branches, only: [:show, :index]
   resources :cart, only: [:create, :index, :update, :destroy]
+  get '/', to: "home#index"
 
   resources :users, only: [:create, :new, :show]
   resources :orders, only: [:index, :show, :create]
