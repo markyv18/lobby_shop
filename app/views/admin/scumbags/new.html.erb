@@ -1,0 +1,9 @@
+
+<%= form_for :scumbag, multipart: true, url: admin_scumbags_path do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.text_field :price, placeholder: "Price" %>
+  <%= f.file_field :avatar %>
+  <%= f.collection_select :branch_id, @branches, :id, :name %>
+  <%= f.collection_select :party_id, @parties, :id, :name %>
+  <%= f.submit "Create Scumbag", class: "btn btn-success btn-md" %>
+<%end%>
