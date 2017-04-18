@@ -45,7 +45,7 @@ FactoryGirl.define do
 
   party_names = ['Democrat',
                  'Republican',
-                 'Independant',
+                 'Independent',
                  'Test',
                  'Test_2',
                  'Test_3',

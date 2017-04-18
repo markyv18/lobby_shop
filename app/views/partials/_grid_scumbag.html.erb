@@ -1,7 +1,11 @@
 <div class="col-xs-18 col-sm-4 col-md-3">
 	<div class="productbox">
 		<div class="imgthumb img-responsive">
-      <%= image_tag scumbag.image_path, id:"#{scumbag.id}_scumbag", class:"index-img" %>
+      <% if scumbag.avatar_file_size %>
+        <%= image_tag scumbag.avatar.url, class:"index-img"%>
+      <% else%>
+        <%= image_tag scumbag.image_path, id:"#{scumbag.id}_scumbag", class:"index-img" %>
+      <%end%>
         <div class="middle">
           <div class="detail-button"><%= button_to "View", scumbag_path(scumbag), method: :get, class: "btn btn-success btn-md btn-block" %></div>
         </div>
