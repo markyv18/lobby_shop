@@ -7,7 +7,7 @@
     <ul class="nav navbar-nav pull-right">
       <li><%= render "partials/login_form" %></li>
       <%= render "partials/nav_dropdown"%>
-      <li><a href="/cart" id="cart"> <i class="fa fa-shopping-cart fa-2x"></i> </a></li>
+    <li><a href="/cart" id="cart"> <span class="fa-stack fa-1x cart"><i class="fa fa-shopping-cart fa-stack-2x"></i><p class="fa-stack-1x cart-quantity"><%=@cart.total_count%></p></span></a></li>
         <li><a href="users/new" class="create_account">New? Create an Account</a></li>
     </ul>
   </div>
