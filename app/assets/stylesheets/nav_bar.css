@@ -15,11 +15,16 @@
   margin-bottom: 20px !important;
 }
 
+.navbar-brand {
+  font-family: 'Exo 2', sans-serif;
+}
+
 #username {
   margin-top: 4px;
 }
 
 .navbar-nav li {
+    font-family: 'Exo 2', sans-serif;
     color: #999999;
     margin-top: 7px;
     padding:0 5px;
