@@ -8,9 +8,7 @@ class Scumbag < ActiveRecord::Base
   belongs_to :branch
   has_many :scumbag_orders
   has_many :orders, through: :scumbag_orders
-  has_attached_file :avatar, styles: { medium: "604x759>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-
-
+  has_attached_file :avatar, styles: { medium: "604x759>", thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   enum status: %w(active retired)
