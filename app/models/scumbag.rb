@@ -9,6 +9,12 @@ class Scumbag < ActiveRecord::Base
   has_many :scumbag_orders
   has_many :orders, through: :scumbag_orders
 
+  has_many :scumbag_deeds
+  has_many :deeds, through: :scumbag_deeds
+
+  has_many :scumbag_reviews
+  has_many :reviews, through: :scumbag_reviews
+
   enum status: %w(active retired)
 
   def party_abbreviation

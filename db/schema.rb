@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415200000) do
+ActiveRecord::Schema.define(version: 20170419044743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20170415200000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
+  end
+
+  create_table "deeds", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "officials", force: :cascade do |t|
@@ -45,6 +49,19 @@ ActiveRecord::Schema.define(version: 20170415200000) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string   "title"
+    t.string   "body"
+    t.datetime "created_at"
+  end
+
+  create_table "scumbag_deeds", force: :cascade do |t|
+    t.integer "deed_id"
+    t.integer "scumbag_id"
+    t.index ["deed_id"], name: "index_scumbag_deeds_on_deed_id", using: :btree
+    t.index ["scumbag_id"], name: "index_scumbag_deeds_on_scumbag_id", using: :btree
+  end
+
   create_table "scumbag_orders", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "scumbag_id"
@@ -54,6 +71,13 @@ ActiveRecord::Schema.define(version: 20170415200000) do
     t.datetime "updated_at",       null: false
     t.index ["order_id"], name: "index_scumbag_orders_on_order_id", using: :btree
     t.index ["scumbag_id"], name: "index_scumbag_orders_on_scumbag_id", using: :btree
+  end
+
+  create_table "scumbag_reviews", force: :cascade do |t|
+    t.integer "scumbag_id"
+    t.integer "review_id"
+    t.index ["review_id"], name: "index_scumbag_reviews_on_review_id", using: :btree
+    t.index ["scumbag_id"], name: "index_scumbag_reviews_on_scumbag_id", using: :btree
   end
 
   create_table "scumbags", force: :cascade do |t|
@@ -80,8 +104,12 @@ ActiveRecord::Schema.define(version: 20170415200000) do
   end
 
   add_foreign_key "orders", "users"
+  add_foreign_key "scumbag_deeds", "deeds"
+  add_foreign_key "scumbag_deeds", "scumbags"
   add_foreign_key "scumbag_orders", "orders"
   add_foreign_key "scumbag_orders", "scumbags"
+  add_foreign_key "scumbag_reviews", "reviews"
+  add_foreign_key "scumbag_reviews", "scumbags"
   add_foreign_key "scumbags", "branches"
   add_foreign_key "scumbags", "parties"
 end

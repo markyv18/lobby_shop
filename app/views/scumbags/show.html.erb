@@ -10,13 +10,28 @@
     <div class="card show-card right">
       <div class="card-block">
         <% if @scumbag.retired? %>
-          <h3 class="card-title"><%= @scumbag.name %> <%= @scumbag.party_abbreviation %><span><%= button_to "Scumbag Retired", cart_index_path(scumbag_id: @scumbag.id), class: "btn btn-success btn-md show-button retired-btn", disabled: true %></span></h3>
+          <h3 class="card-title"><font color="white"><%= @scumbag.name %> <%= @scumbag.party_abbreviation %><span><%= button_to "Scumbag Retired", cart_index_path(scumbag_id: @scumbag.id), class: "btn btn-success btn-md show-button retired-btn", disabled: true %></font></span></h3>
         <% else %>
-          <h3 class="card-title"><%= @scumbag.name %> <%= @scumbag.party_abbreviation %><span><%= button_to "Add to Cart", cart_index_path(scumbag_id: @scumbag.id), class: "btn btn-success btn-md show-button" %></span></h3>
+          <h3 class="card-title"><font color="white"><%= @scumbag.name %> <%= @scumbag.party_abbreviation %><span><%= button_to "Add to Cart", cart_index_path(scumbag_id: @scumbag.id), class: "btn btn-success btn-md show-button" %></font></span></h3>
         <%end%>
-        <p class="card-text"><%= @scumbag.branch.name %></p>
+        <p class="card-text"><font color="white"><%= @scumbag.branch.name %></font></p>
         <b class="finalprice">$<%= @scumbag.price %></b>
-        <p class="card-text">An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. I know words. I have the best words. You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful.</p>
+        <p class="card-text"><font color="white">This is some text! An 'extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. I know words. I have the best words. You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful.</font></p>
+
+        <p class="card-text"><font color="white">What other Lobbyists have thought of <%= @scumbag.name %> <br>
+          <div id="scumbag-reviews">
+                                        <% @scumbag.reviews.each do |review| %>
+                                          <div id="scumbag-review-details">
+                                          What?: <%= review.title %> <br>
+                                          How?: <%= review.body %><br><br>
+                                          </div>
+                                        <% end %>
+        </font></div></p>
+
+        <p class="card-text"><font color="white">Things <%= @scumbag.name %> will do for money: <% @scumbag.deeds.each do |deed| %>
+                                                        <%= deed.name %>  -
+                                                        <% end %>
+        </font></p>
       </div>
     </div>
   </div>

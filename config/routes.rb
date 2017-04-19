@@ -7,6 +7,23 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :new, :show]
   resources :orders, only: [:index, :show, :create]
 
+  resources :scumbags do
+    resources :deeds
+  end
+
+  # resources :deeds do
+  #   resources :scumbags
+  # end
+
+  resources :scumbags do
+    resources :reviews
+  end
+
+  resources :reviews do
+    resources :scumbags
+  end
+
+
   namespace :admin do
    resources :scumbags, only: [:create, :destroy, :new, :index]
    resources :orders, only: [:index, :update]

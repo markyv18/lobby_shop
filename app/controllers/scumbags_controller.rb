@@ -6,6 +6,8 @@ class ScumbagsController < ApplicationController
 
   def show
     @scumbag = Scumbag.find(params[:id])
+    # @deeds = @scumbag.deeds
+    # @reviews = @scumbag.reviews
   end
 
 end
