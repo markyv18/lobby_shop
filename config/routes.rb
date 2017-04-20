@@ -13,7 +13,7 @@ Rails.application.routes.draw do
    resources :users, only: [:update, :edit]
   end
 
-  root :to => "home#index"
+  root :to => "branches#index"
   get '/dashboard', to: 'users#show'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
