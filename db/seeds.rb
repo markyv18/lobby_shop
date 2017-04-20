@@ -1,9 +1,9 @@
 require 'csv'
 
-# DatabaseCleaner.strategy = :truncation
-# DatabaseCleaner.clean
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
-party_names = ["Democrat", "Republican", "Independant"]
+party_names = ["Democrat", "Republican", "Independent", "Justice"]
 
 party_names.each do |name|
   Party.create!(name: name)

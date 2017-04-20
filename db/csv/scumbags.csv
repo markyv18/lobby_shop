@@ -1,10 +1,41 @@
 name,price,description,image_path,party,branch
-Mitch McConnell,1500,,/mitch_mcconnell.png,Republican,Senate
-Harry Reid,1750,,/harry_reid.png,Democrat,Senate
-John McCain,2250,,/john_mccain.png,Republican,Senate
-Marco Rubio,500,,/marco_rubio.png,Republican,Senate
-Lindsey Graham,1500,,/lindsey_graham.png,Republican,Senate
-Tom Cotton,750,,/tom_cotton.png,Republican,Senate
-Cory Gardner,800,,/cory_gardner.png,Republican,Senate
-Rand Paul,1250,,/rand_paul.png,Republican,Senate
-Tim Kain,2500,,/tim_kain.png,Democrat,Senate
+Mitch McConnell,90000,,/mitch_mcconnell.png,Republican,Senate
+Michael Bennet,398966,,/harry_reid.png,Democrat,Senate
+John McCain,190530,,/john_mccain.png,Republican,Senate
+Marco Rubio,495718,,/marco_rubio.png,Republican,Senate
+Lindsey Graham,44760,,/lindsey_graham.png,Republican,Senate
+Tom Cotton,10650,,/tom_cotton.png,Republican,Senate
+Cory Gardner,25450,,/cory_gardner.png,Republican,Senate
+Rand Paul,65413,,/rand_paul.png,Republican,Senate
+Tim Kain,94950,,/tim_kain.png,Democrat,Senate
+Chuck Schumer,425472,,/chuck_schumer.png,Democrat,Senate
+Mike Crapo,156052,,/mike_crapo.png,Republican,Senate
+Ted Cruz,18621,,/ted_cruz.png,Republican,Senate
+Paul Ryan,407532,,/paul_ryan.png,Republican,Congress
+Chris Van Hollen,540041,,chrin_van_hollen.png,Democrat,Congress
+Kevin McCarthy,331934,,kevin_mccarthy.png,Republican,Congress
+Barbara Comstock,207338,,barbara_comstock.png,Republican,Congress
+John Boehner,177050,,john_boehner.png,Republican,Congress
+Tammy Duckworth,149058,,tammy_duckworth.png,Democrat,Congress
+Bill Shuster,95258,,bill_shuster.png,Republican,Congress
+Debbie Wasserman Schultz,66700,,debbie_schultz.png,Democrat,Congress
+Jason Chaffetz,58441,,jason_chaffetz.png,Republican,Congress
+Bruce Poliquin,46625,,bruce_poliquin.png,Republican,Congress
+Steve Scalise,196521,,steve_scalise.png,Republican,Congress
+Patrick Murphy,301581,,patrick_murphy.png,Democrat,Congress
+Donald Trump,1000000,,donald_trump.png,Republican,Executive
+Mike Pence,750000,,mike_pence.png,Republican,Executive
+Rex Tillerson,550000,,rex_tillerson.png,Republican,Executive
+Steven Mnuchin,500000,,steve_mnuchin.png,Republican,Executive
+Reince Priebus,300000,,reince_priebus.png,Republican,Executive
+Ben Carson,100000,,ben_carson.png,Republican,Executive
+Jeff Session,250000,,jeff_sessions.png,Republican,Executive
+Betsy DeVos,900000,,betsy_devos.png,Republican,Executive
+John Roberts,1250000,,john_roberts.png,Justice,Supreme Court
+Anthony Kennedy,1500000,,anthony_kennedy.png,Justice,Supreme Court
+Clarence Thomas,1700000,,clarence_thomas.png,Justice,Supreme Court
+Elena Kagan,1500000,,elena_kagan.png,Justice,Supreme Court
+Stephen Breyer,1250000,,stephen_breyer.png,Justice,Supreme Court
+Samuel Alito,1560300,,samuel_alito.png,Justice,Supreme Court
+Sonia Sotomayor,7000450,,sonia_sotomayor.png,Justice,Supreme Court
+Neil Gorsuch,1400000,,neil_gorsuch.png,Justice,Supreme Court
