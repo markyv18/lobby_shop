@@ -1,0 +1,14 @@
+<div class="container">    
+  <div class="row">
+  <% @branches.each do |branch| %>
+    <div class="col-sm-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><%= branch.name %></div>
+        <div class="panel-body"><a href="/<%= branch.slug %>"><img src="<%= "#{branch.image_path}" %>" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer"><%= branch.tagline%></div>
+      </div>
+    </div>
+  <% end%>
+  </div>
+</div>
+

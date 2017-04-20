@@ -9,7 +9,7 @@
   border-style: solid;
   border-width: 1px;
   padding: 20px;
-  background-color: rgba(1, 1, 1, 0.4)
+  background-color: rgba(1, 1, 1, 0.5)
 }
 
 .left {
@@ -20,11 +20,15 @@
   margin: 200px 40px 10px 10px;
   position: relative;
   top: 50%;
-  
+  color: white;
 }
 
 .show-button {
   position: absolute;
   right: 20px;
   margin: 0px 0px 200px 0px;
+}
+
+.finalprice {
+  font-size: 200%;
 }
